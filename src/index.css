@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #12131a;
+  --color-surface-dim: #12131a;
+  --color-surface-bright: #383941;
+  --color-surface-container-lowest: #0d0e15;
+  --color-surface-container-low: #1a1b22;
+  --color-surface-container: #1e1f26;
+  --color-surface-container-high: #292931;
+  --color-surface-container-highest: #33343c;
+  --color-surface-variant: #33343c;
+  --color-on-surface: #e3e1ec;
+  --color-on-surface-variant: #c8c5cb;
+  --color-outline: #919095;
+  --color-outline-variant: #47464b;
+  --color-primary: #c8c5ca;
+  --color-on-primary: #303033;
+  --color-primary-container: #18181b;
+  --color-on-primary-container: #828184;
+  --color-primary-fixed: #e4e1e6;
+  --color-primary-fixed-dim: #c8c5ca;
+  --color-secondary: #ffb4a9;
+  --color-on-secondary: #690002;
+  --color-secondary-container: #921510;
+  --color-on-secondary-container: #ff9f92;
+  --color-tertiary: #c7c5ce;
+  --color-on-tertiary-container: #818188;
+  --color-error: #ffb4ab;
+  --color-background: #12131a;
+  --color-on-background: #e3e1ec;
+
+  --font-display: "Geist", "Inter", sans-serif;
+  --font-display-mobile: "Geist", "Inter", sans-serif;
+  --font-headline-lg: "Geist", "Inter", sans-serif;
+  --font-headline-lg-mobile: "Geist", "Inter", sans-serif;
+  --font-headline-md: "Geist", "Inter", sans-serif;
+  --font-headline-sm: "Geist", "Inter", sans-serif;
+  --font-body-lg: "Inter", sans-serif;
+  --font-body-md: "Inter", sans-serif;
+  --font-body-sm: "Inter", sans-serif;
+  --font-label-lg: "JetBrains Mono", ui-monospace, monospace;
+  --font-label-md: "JetBrains Mono", ui-monospace, monospace;
+  --font-label-sm: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-display: 56px;
+  --text-display--line-height: 64px;
+  --text-display--letter-spacing: -0.03em;
+  --text-display--font-weight: 600;
+  --text-display-mobile: 36px;
+  --text-display-mobile--line-height: 44px;
+  --text-display-mobile--letter-spacing: -0.025em;
+  --text-display-mobile--font-weight: 600;
+  --text-headline-lg: 36px;
+  --text-headline-lg--line-height: 44px;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 500;
+  --text-headline-lg-mobile: 28px;
+  --text-headline-lg-mobile--line-height: 36px;
+  --text-headline-lg-mobile--letter-spacing: -0.02em;
+  --text-headline-lg-mobile--font-weight: 500;
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--letter-spacing: -0.015em;
+  --text-headline-md--font-weight: 500;
+  --text-headline-sm: 18px;
+  --text-headline-sm--line-height: 26px;
+  --text-headline-sm--letter-spacing: -0.01em;
+  --text-headline-sm--font-weight: 500;
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 26px;
+  --text-body-lg--letter-spacing: -0.005em;
+  --text-body-lg--font-weight: 400;
+  --text-body-md: 14px;
+  --text-body-md--line-height: 22px;
+  --text-body-md--font-weight: 400;
+  --text-body-sm: 12px;
+  --text-body-sm--line-height: 18px;
+  --text-body-sm--font-weight: 400;
+  --text-label-lg: 14px;
+  --text-label-lg--line-height: 20px;
+  --text-label-lg--letter-spacing: 0.02em;
+  --text-label-lg--font-weight: 500;
+  --text-label-md: 12px;
+  --text-label-md--line-height: 16px;
+  --text-label-md--letter-spacing: 0.03em;
+  --text-label-md--font-weight: 400;
+  --text-label-sm: 10px;
+  --text-label-sm--line-height: 14px;
+  --text-label-sm--letter-spacing: 0.05em;
+  --text-label-sm--font-weight: 400;
+
+  --spacing-gutter: 1.5rem;
+  --spacing-gutter-mobile: 1rem;
+  --spacing-margin: 3rem;
+  --spacing-margin-mobile: 1.25rem;
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+}
+
+@utility pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@utility pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background: #0d0e15;
+    scrollbar-width: none;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background: #0d0e15;
+    color: #e3e1ec;
+    font-family: Inter, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    min-height: 100dvh;
+  }
+
+  ::selection {
+    background: #921510;
+    color: #ffdad5;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  user-select: none;
+}
